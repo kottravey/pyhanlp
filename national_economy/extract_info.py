@@ -6,8 +6,6 @@ import re
 from jpype import JString
 
 from pyhanlp import *
-from demo_stopwords import *
-from ngram_segment import ViterbiSegment
 
 def read_file(FILE_READ_PATH):
     fR = open(FILE_READ_PATH, 'r', encoding='UTF-8')
@@ -24,7 +22,6 @@ if __name__ == '__main__':
     #HanLP.Config.ShowTermNature = False
     trie = load_from_file(HanLP.Config.CoreStopWordDictionaryPath)
     replacement = ""
-    #segment = ViterbiSegment()
     #text = "把招商引资作为扩大对外开放的重点来抓，利用外资取得重大进展，实际利用外资达20.17亿美元，增长54.7％，其中外商直接投资15.61亿美元，增长47.5％。"
     text = read_file("/Users/sadielin/Documents/programmer/nlp/cut/hb.txt")
     sent_lists = ""
